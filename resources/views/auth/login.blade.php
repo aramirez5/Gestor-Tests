@@ -32,7 +32,7 @@
     </div>
     <div class="card">
         <div class="body">
-            <form id="sign_in" method="POST">
+            <form action="{{ route('loginAdmin') }}" autocomplete="on" method="post" role="form">
                 <div class="msg">Iniciar Sesión</div>
                 <div class="input-group">
                         <span class="input-group-addon">
