@@ -13,16 +13,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="{{ asset('/bower_components/adminbsb-materialdesign/plugins/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ asset('/assets/css/bootstrap/bootstrap.css')}}" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="{{ asset('/bower_components/adminbsb-materialdesign/plugins/node-waves/waves.css')}}" rel="stylesheet">
+    <link href="{{ asset('/assets/css/node-waves/waves.css')}}" rel="stylesheet">
 
     <!-- Animation Css -->
-    <link href="{{ asset('/bower_components/adminbsb-materialdesign/plugins/animate-css/animate.css')}}" rel="stylesheet">
+    <link href="{{ asset('/assets/css/animate-css/animate.css')}}" rel="stylesheet">
 
     <!-- Custom Css -->
-    <link href="{{ asset('/bower_components/adminbsb-materialdesign/css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('/assets/css/style.css')}}" rel="stylesheet">
 </head>
 
 <body class="login-page">
@@ -73,20 +73,20 @@
 </div>
 
 <!-- Jquery Core Js -->
-<script src="{{ asset('/bower_components/adminbsb-materialdesign/plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{ asset('/assets/js/jquery/jquery.min.js')}}"></script>
 
 <!-- Bootstrap Core Js -->
-<script src="{{ asset('/bower_components/adminbsb-materialdesign/plugins/bootstrap/js/bootstrap.js')}}"></script>
+<script src="{{ asset('/assets/js/bootstrap/bootstrap.js')}}"></script>
 
 <!-- Waves Effect Plugin Js -->
-<script src="{{ asset('/bower_components/adminbsb-materialdesign/plugins/node-waves/waves.js')}}"></script>
+<script src="{{ asset('/assets/js/node-waves/waves.js')}}"></script>
 
 <!-- Validation Plugin Js -->
-<script src="{{ asset('/bower_components/adminbsb-materialdesign/plugins/jquery-validation/jquery.validate.js')}}"></script>
+<script src="{{ asset('/assets/js/jquery/jquery.validate.js')}}"></script>
 
 <!-- Custom Js -->
-<script src="{{ asset('/bower_components/adminbsb-materialdesign/js/admin.js')}}"></script>
-<script src="{{ asset('/bower_components/adminbsb-materialdesign/js/pages/examples/sign-in.js')}}"></script>
+<script src="{{ asset('/assets/js/admin.js')}}"></script>
+<script src="{{ asset('/assets/js/sign-in.js')}}"></script>
 </body>
 
 </html>
