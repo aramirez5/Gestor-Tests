@@ -11,20 +11,16 @@
 |
 */
 
-/*
-Route::get('/', function () {
-    return view('auth/login');
-    //return view('admin/dashboard/index');
-});
-*/
-
-#ADMIN PANEL
 Route::get('/', function () {
     return view('auth/login');
 });
 
-// Route to show the login form
-Route::get('login', array('as' => 'loginAdmin', 'uses' => 'UserController@showLogin'));
+Route::get('admin', function () {
+    return view('auth.login');
+});
 
-// Route to process the form
-Route::post('login', array('as' => 'loginAdmin', 'uses' => 'UserController@doLogin'));
+Route::group(array('prefix' => 'dashboard'), function () {
+    Route::post('index', array('as' => 'loginAdmin', 'uses' => 'Auth\AuthController@postSignin'));
+    Route::get('index', array('as' => 'logoutAdmin', 'uses' => 'Auth\AuthController@getLogout'));
+});
+

@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-store" />
+    <meta http-equiv="cache-control" content="must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
     <title>Log In | GdT</title>
     <!-- Favicon-->
     <link rel="icon" href="{{ asset('/assets/img/favicon.ico')}}" type="image/x-icon">
@@ -28,19 +34,21 @@
 <body class="login-page">
 <div class="login-box">
     <div class="logo">
-        <a href="javascript:void(0);">Gestor de<b> TESTS</b></a>
+        <a>Gestor de<b> TESTS</b></a>
     </div>
     <div class="card">
         <div class="body">
             <form action="{{ route('loginAdmin') }}" autocomplete="on" method="post" role="form">
+                <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                 <div class="msg">Iniciar Sesión</div>
                 <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="username" placeholder="Email" required autofocus>
+                        <input type="email" class="form-control" name="email" placeholder="Email" required autofocus>
                     </div>
+                    <span>{!! $errors->first('email', '<span class="help-block">:message</span>') !!}</span>
                 </div>
                 <div class="input-group">
                         <span class="input-group-addon">
@@ -49,6 +57,7 @@
                     <div class="form-line">
                         <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
                     </div>
+                    <span>{!! $errors->first('password', '<span class="help-block">:message</span>') !!}</span>
                 </div>
                 <div class="row">
                     <div class="col-xs-8 p-t-5">

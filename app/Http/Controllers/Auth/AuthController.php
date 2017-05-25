@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
 use Validator;
+use Auth;
+use Redirect;
+use Lang;
+use Input;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -37,7 +41,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+       
     }
 
     /**
@@ -68,5 +72,53 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function getSignin()
+    {
+        return View('main');
+    }
+
+    public function postSignin()
+    {
+        /*
+        $rules = array(
+            'email'    => 'required',
+            'password' => 'required|between:3,32',
+        );
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        dd(Input::all());
+
+        if ($validator->fails()) {
+            return Redirect::back()->withInput()->withErrors($validator);
+        }
+        */
+
+        $credentials = [
+            'email'     => Input::get('email'),
+            'password'  => Input::get('password')
+        ];
+
+
+
+        if (Auth::attempt($credentials)) {
+            return View('admin.dashboard.index');
+        }
+
+        else{
+            return Redirect::to("admin")->with('error', Lang::get('auth.permission'));
+        }
+
+    }
+
+    public function getLogout()
+    {
+        // Log the user out
+        Auth::logout();
+
+        // Redirect to the users page
+        return Redirect::to('admin')->with('success', 'You have successfully logged out!');
     }
 }
