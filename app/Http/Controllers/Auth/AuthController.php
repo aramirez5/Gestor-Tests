@@ -103,7 +103,7 @@ class AuthController extends Controller
             }
 
             else{
-                return Redirect::to("admin")->withErrors([$credentials, Lang::get('auth.failed')]);
+                return Redirect::to('admin')->withErrors([$credentials, Lang::get('auth.failed')]);
             }
         }
     }

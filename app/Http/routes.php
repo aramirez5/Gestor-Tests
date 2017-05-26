@@ -12,15 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('auth.login');
 });
 
 Route::get('admin', function () {
     return view('auth.login');
 });
 
-Route::group(array('prefix' => 'dashboard'), function () {
-    Route::post('index', array('as' => 'loginAdmin', 'uses' => 'Auth\AuthController@postSignin'));
-    Route::get('index', array('as' => 'logoutAdmin', 'uses' => 'Auth\AuthController@getLogout'));
+Route::group(array('prefix' => 'admin'), function () {
+    Route::post('dashboard', array('as' => 'loginAdmin', 'uses' => 'Auth\AuthController@postSignin'));
+    Route::get('dashboard', array('as' => 'logoutAdmin', 'uses' => 'Auth\AuthController@getLogout'));
 });
 
