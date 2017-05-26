@@ -6,7 +6,7 @@ use App\Models\User;
 use Validator;
 use Auth;
 use Redirect;
-use Lang;
+use Illuminate\Support\Facades\Lang;
 use Input;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -41,7 +41,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-       
+
     }
 
     /**
@@ -81,44 +81,37 @@ class AuthController extends Controller
 
     public function postSignin()
     {
-        /*
         $rules = array(
-            'email'    => 'required',
-            'password' => 'required|between:3,32',
+            'email'    => 'required|email',
+            'password' => 'required|between:6,32',
         );
 
         $validator = Validator::make(Input::all(), $rules);
 
-        dd(Input::all());
-
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator);
         }
-        */
-
-        $credentials = [
-            'email'     => Input::get('email'),
-            'password'  => Input::get('password')
-        ];
-
-
-
-        if (Auth::attempt($credentials)) {
-            return View('admin.dashboard.index');
-        }
 
         else{
-            return Redirect::to("admin")->with('error', Lang::get('auth.permission'));
-        }
+            $credentials = [
+                'email'     => Input::get('email'),
+                'password'  => Input::get('password')
+            ];
 
+            if (Auth::attempt($credentials)) {
+                return View('admin.dashboard.index');
+            }
+
+            else{
+                return Redirect::to("admin")->withErrors([$credentials, Lang::get('auth.failed')]);
+            }
+        }
     }
 
     public function getLogout()
     {
-        // Log the user out
         Auth::logout();
 
-        // Redirect to the users page
-        return Redirect::to('admin')->with('success', 'You have successfully logged out!');
+        return Redirect::to('admin')->with('success', Lang::get('auth.logout'));
     }
 }
