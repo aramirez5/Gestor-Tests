@@ -45,9 +45,7 @@
                     <div class="alert alert-danger">{{$errors->first()}}</div>
                 @endif
                 @if(session()->has('success'))
-                    <div class="alert alert-success">
-                        {{ session()->get('success') }}
-                    </div>
+                    <div class="alert alert-success">{{session()->get('success')}}</div>
                 @endif
                 <div class="input-group">
                         <span class="input-group-addon">
