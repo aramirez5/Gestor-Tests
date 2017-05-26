@@ -13,5 +13,14 @@
 
 Route::get('/', function () {
     return view('auth/login');
-    //return view('admin/dashboard/index');
 });
+
+Route::get('admin', function () {
+    return view('auth.login');
+});
+
+Route::group(array('prefix' => 'dashboard'), function () {
+    Route::post('index', array('as' => 'loginAdmin', 'uses' => 'Auth\AuthController@postSignin'));
+    Route::get('index', array('as' => 'logoutAdmin', 'uses' => 'Auth\AuthController@getLogout'));
+});
+

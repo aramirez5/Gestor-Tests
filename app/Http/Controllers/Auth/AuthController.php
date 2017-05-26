@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
 use Validator;
+use Auth;
+use Redirect;
+use Illuminate\Support\Facades\Lang;
+use Input;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -37,7 +41,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+
     }
 
     /**
@@ -68,5 +72,46 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function getSignin()
+    {
+        return View('main');
+    }
+
+    public function postSignin()
+    {
+        $rules = array(
+            'email'    => 'required|email',
+            'password' => 'required|between:6,32',
+        );
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->fails()) {
+            return Redirect::back()->withInput()->withErrors($validator);
+        }
+
+        else{
+            $credentials = [
+                'email'     => Input::get('email'),
+                'password'  => Input::get('password')
+            ];
+
+            if (Auth::attempt($credentials)) {
+                return View('admin.dashboard.index');
+            }
+
+            else{
+                return Redirect::to("admin")->withErrors([$credentials, Lang::get('auth.failed')]);
+            }
+        }
+    }
+
+    public function getLogout()
+    {
+        Auth::logout();
+
+        return Redirect::to('admin')->with('success', Lang::get('auth.logout'));
     }
 }
