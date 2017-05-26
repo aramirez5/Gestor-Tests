@@ -1,5 +1,4 @@
 TestCenter
 =======================
-**TestCenter is a platform for QA testers and convential users for transform natural language tests (Gherkin) into acceptance/functional tests (Codeception) ready for their execution.** 
+**CinemaCritic is a mobile movie application made using the Cordova framework in which you can check the information of movies, rate them, criticize them, add those you are interested in a wish list and check your statistics in the APP.** 
 
-It was developed with [Laravel 5.X Framework](https://laravel.com/) as PHP framework, [Codeception 2.X Framework](http://codeception.com/) for acceptance tests and [AdminBSBMaterialDesign](https://github.com/aramirez5/AdminBSBMaterialDesign/) for the template administration.
