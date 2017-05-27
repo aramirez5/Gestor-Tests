@@ -10,7 +10,7 @@
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
-    <title>Log In | GdT</title>
+    <title>Log In | TC</title>
     <!-- Favicon-->
     <link rel="icon" href="{{ asset('/assets/img/favicon.ico')}}" type="image/x-icon">
 
@@ -34,7 +34,7 @@
 <body class="login-page">
 <div class="login-box">
     <div class="logo">
-        <a>Gestor de<b> TESTS</b></a>
+        <a>Test<b> CENTER</b></a>
     </div>
     <div class="card">
         <div class="body">
