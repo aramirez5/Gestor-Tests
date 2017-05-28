@@ -11,6 +11,7 @@ app/storage/
 public/storage
 public/hot
 storage/framework
+storage/framework/sessions/*
 storage/logs
 storage/*.key
 .env.*.php
