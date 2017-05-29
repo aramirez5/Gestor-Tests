@@ -2,7 +2,7 @@ $(function () {
     skinChanger();
     activateNotificationAndTasksScroll();
 
-    setSkinListHeightAndScroll();
+    setSkinListHeightAndScroll(firstTime);
     setSettingListHeightAndScroll();
     $(window).resize(function () {
         setSkinListHeightAndScroll();
@@ -30,13 +30,15 @@ function setSkinListHeightAndScroll() {
     var height = $(window).height() - ($('.navbar').innerHeight() + $('.right-sidebar .nav-tabs').outerHeight());
     var $el = $('.demo-choose-skin');
 
-    $el.slimScroll({ destroy: true }).height('auto');
-    $el.parent().find('.slimScrollBar, .slimScrollRail').remove();
+    if(firstTime == undefined){
+        $el.slimScroll({ destroy: true }).height('auto');
+        $el.parent().find('.slimScrollBar, .slimScrollRail').remove();
+    }
 
     $el.slimscroll({
         height: height + 'px',
         color: 'rgba(0,0,0,0.5)',
-        size: '4px',
+        size: '6px',
         alwaysVisible: false,
         borderRadius: '0',
         railBorderRadius: '0'
@@ -44,17 +46,19 @@ function setSkinListHeightAndScroll() {
 }
 
 //Setting tab content set height and show scroll
-function setSettingListHeightAndScroll() {
+function setSettingListHeightAndScroll(firstTime) {
     var height = $(window).height() - ($('.navbar').innerHeight() + $('.right-sidebar .nav-tabs').outerHeight());
     var $el = $('.right-sidebar .demo-settings');
 
-    $el.slimScroll({ destroy: true }).height('auto');
-    $el.parent().find('.slimScrollBar, .slimScrollRail').remove();
+    if(firstTime == undefined){
+        $el.slimScroll({ destroy: true }).height('auto');
+        $el.parent().find('.slimScrollBar, .slimScrollRail').remove();
+    }
 
     $el.slimscroll({
         height: height + 'px',
         color: 'rgba(0,0,0,0.5)',
-        size: '4px',
+        size: '6px',
         alwaysVisible: false,
         borderRadius: '0',
         railBorderRadius: '0'
