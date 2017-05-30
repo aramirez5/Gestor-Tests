@@ -12,11 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('auth.main');
 });
 
 Route::get('admin', function () {
-    return view('auth.login');
+    return view('auth.main');
 });
 
 Route::group(array('prefix' => 'admin'), function () {
