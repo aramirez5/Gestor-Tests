@@ -83,14 +83,4 @@ class UserController extends Controller
     {
         //
     }
-
-    public function showLogin()
-    {
-        return View::make('login');
-    }
-
-    public function doLogin()
-    {
-        // process the form
-    }
 }

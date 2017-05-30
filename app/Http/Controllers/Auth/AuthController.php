@@ -99,7 +99,7 @@ class AuthController extends Controller
             ];
 
             if (Auth::attempt($credentials)) {
-                return View('admin.dashboard.index');
+                return View('admin.dashboard.main');
             }
 
             else{
