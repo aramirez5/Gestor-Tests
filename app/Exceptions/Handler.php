@@ -57,6 +57,14 @@ class Handler extends ExceptionHandler
         {
             return response()->view('errors.404', [], 404);
         }
+        elseif (view()->exists('errors.500'))
+        {
+            return response()->view('errors.500', [], 500);
+        }
+        elseif (view()->exists('errors.503'))
+        {
+            return response()->view('errors.503', [], 503);
+        }
         else
         {
             return (new SymfonyDisplayer(config('app.debug')))

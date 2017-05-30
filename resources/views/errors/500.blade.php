@@ -10,7 +10,7 @@
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
-    <title>503 | Test Center</title>
+    <title>500 | Test Center</title>
     <!-- Favicon-->
     <link rel="icon" href="{{ asset('/assets/img/favicon.ico')}}" type="image/x-icon">
 
@@ -34,8 +34,8 @@
 <body class="four-zero-four">
     <div class="four-zero-four-container">
         <div class="error-message">Gestor de TESTS</div>
-        <div class="error-code">503 ERROR</div>
-        <div class="error-message">Service Temporarily Unavailable</div>
+        <div class="error-code">500 ERROR</div>
+        <div class="error-message">Internal Server Error</div>
         <div class="button-place">
             <a href="/" class="btn btn-default btn-lg waves-effect">GO TO HOMEPAGE</a>
         </div>
