@@ -40,7 +40,7 @@
     <div class="error-code">404 ERROR</div>
     <div class="error-message">PAGE NOT FOUND - Looks like no one is here!</div>
     <div class="button-place">
-        <a href="admin" class="btn btn-default btn-lg waves-effect">GO TO HOMEPAGE</a>
+        <a href="/" class="btn btn-default btn-lg waves-effect">GO TO HOMEPAGE</a>
     </div>
 </div>
 
