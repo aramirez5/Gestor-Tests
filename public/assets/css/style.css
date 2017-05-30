@@ -1,5 +1,8 @@
 ﻿/* Navbar ====================================== */
 @import url(materialize.css);
+.slimScrollDiv{
+  overflow: visible!important;
+}
 .navbar {
   font-family: "Roboto", sans-serif;
   -webkit-border-radius: 0;
@@ -7551,7 +7554,7 @@ fieldset[disabled] .form-control {
   .sidebar .menu {
     position: relative;
     overflow-y: auto;
-    height: 90vh; }
+    height: 70vh; }
     .sidebar .menu .list {
       list-style: none;
       padding-left: 0; }
