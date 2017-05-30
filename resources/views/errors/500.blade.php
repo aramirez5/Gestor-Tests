@@ -37,8 +37,8 @@
 <body class="four-zero-four">
 <div class="four-zero-four-container">
     <div class="error-message">Gestor de TESTS</div>
-    <div class="error-code">404 ERROR</div>
-    <div class="error-message">Page Not Found</div>
+    <div class="error-code">500 ERROR</div>
+    <div class="error-message">Internal Server Error</div>
     <div class="button-place">
         <a href="/" class="btn btn-default btn-lg waves-effect">GO TO HOMEPAGE</a>
     </div>
