@@ -38,8 +38,5 @@
 
 <!-- Custom Js -->
 <script src="{{ asset('/assets/js/admin.js')}}"></script>
-<script src="{{ asset('/assets/js/sign-in.js')}}"></script>
-<script src="{{ asset('/assets/js/index.js')}}"></script>
 
-<!-- Demo Js -->
-<script src="{{ asset('/assets/js/demo.js')}}"></script>
+@yield('js')

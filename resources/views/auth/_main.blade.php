@@ -3,24 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="cache-control" content="no-store" />
     <meta http-equiv="cache-control" content="must-revalidate" />
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Welcome To Test Center</title>
+    <title>Log In | TC</title>
 
     @extends('layout._header')
 
 </head>
 
-<body class="theme-red">
+<body class="login-page">
 
-    @extends('admin.dashboard.index')
+    @extends('auth.login')
+
     @extends('layout._footer')
 
+    @section('js')
+        <script src="{{ asset('/assets/js/sign-in.js')}}"></script>
+    @endsection
+
 </body>
+
 </html>
