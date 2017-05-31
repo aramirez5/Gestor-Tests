@@ -39,4 +39,4 @@
 <!-- Custom Js -->
 <script src="{{ asset('/assets/js/admin.js')}}"></script>
 
-@yield('content')
+@yield('js')
