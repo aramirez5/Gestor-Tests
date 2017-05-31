@@ -20,7 +20,13 @@
 <body class="theme-red">
 
     @extends('admin.dashboard.index')
+
     @extends('layout._footer')
+
+    @section('js')
+        <script src="{{ asset('/assets/js/index.js')}}"></script>
+        <script src="{{ asset('/assets/js/demo.js')}}"></script>
+    @endsection
 
 </body>
 </html>
