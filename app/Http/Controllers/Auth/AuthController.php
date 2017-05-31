@@ -74,12 +74,12 @@ class AuthController extends Controller
         ]);
     }
 
-    public function getSignin()
-    {
-        return View('main');
-    }
-
-    public function postSignin()
+    /**
+     * Log into the application
+     *
+     * @return mixed
+     */
+    public function login()
     {
         $rules = array(
             'email'    => 'required|email',
@@ -108,7 +108,12 @@ class AuthController extends Controller
         }
     }
 
-    public function getLogout()
+    /**
+     * Log out from the application
+     *
+     * @return Redirect
+     */
+    public function logout()
     {
         Auth::logout();
 

@@ -20,7 +20,7 @@ Route::get('admin', function () {
 });
 
 Route::group(array('prefix' => 'admin'), function () {
-    Route::post('dashboard', array('as' => 'loginAdmin', 'uses' => 'Auth\AuthController@postSignin'));
-    Route::get('dashboard', array('as' => 'logoutAdmin', 'uses' => 'Auth\AuthController@getLogout'));
+    Route::post('dashboard', array('as' => 'loginAdmin', 'uses' => 'Auth\AuthController@login'));
+    Route::get('dashboard', array('as' => 'logoutAdmin', 'uses' => 'Auth\AuthController@logout'));
 });
 
