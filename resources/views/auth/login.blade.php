@@ -7,12 +7,7 @@
             <form action="{{ route('loginAdmin') }}" autocomplete="on" method="post" role="form">
                 <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                 <div class="msg">Log In</div>
-                @if($errors->any())
-                    <div class="alert alert-danger">{{$errors->first()}}</div>
-                @endif
-                @if(session()->has('success'))
-                    <div class="alert alert-success">{{session()->get('success')}}</div>
-                @endif
+                @include('notifications.main')
                 <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
