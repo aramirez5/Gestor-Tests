@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('auth._main');
+    return redirect('admin');
 });
 
 Route::get('admin', function () {
